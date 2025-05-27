@@ -33,6 +33,8 @@ watch(
 
   <template v-for="article in articles" :key="article.id">
     <ArticlePreview :data="article" />
+
+    <br />
   </template>
 </template>
 
