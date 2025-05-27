@@ -20,10 +20,10 @@ export default defineConfigWithVueTs(
   vueTsConfigs.recommended,
   skipFormatting,
 
-  {
-    files: ["**/*.vue"],
-    rules: {
-      "vue/multi-word-component-names": "off"
-    },
-  },
+  // {
+  //   files: ["**/*.vue"],
+  //   rules: {
+  //     "vue/multi-word-component-names": "off"
+  //   },
+  // },
 )

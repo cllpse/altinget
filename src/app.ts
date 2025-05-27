@@ -3,7 +3,7 @@ import "@/assets/reset.css"
 import { createApp } from "vue"
 import { createRouter, createWebHistory } from "vue-router"
 
-import Articles from "@/views/Articles.vue"
+import Articles from "@/views/ViewArticles.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +22,12 @@ const router = createRouter({
     {
       path: "/article",
       name: "article",
-      component: () => import("@/views/Article.vue"),
+      component: () => import("@/views/ViewArticle.vue"),
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("@/views/ViewLogin.vue"),
     },
   ],
 })

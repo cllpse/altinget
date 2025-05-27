@@ -1,5 +1,8 @@
 {
   "files": [],
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"
