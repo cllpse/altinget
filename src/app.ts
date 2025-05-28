@@ -4,7 +4,9 @@ import "@/assets/variables.css"
 import { createApp } from "vue"
 import { createRouter, createWebHistory } from "vue-router"
 
-import Articles from "@/views/ViewArticles.vue"
+import app from "./app.vue"
+
+import ViewRoot from "./views/ViewRoot.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,12 +15,12 @@ const router = createRouter({
     {
       path: "/",
       name: "root",
-      component: Articles,
+      component: ViewRoot,
     },
     {
       path: "/articles",
       name: "articles",
-      component: Articles,
+      component: () => import("@/views/ViewArticles.vue"),
     },
     {
       path: "/article/:id",
@@ -33,7 +35,7 @@ const router = createRouter({
   ],
 })
 
-import app from "./app.vue"
+
 
 const a = createApp(app)
 

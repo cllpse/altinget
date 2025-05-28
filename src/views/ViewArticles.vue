@@ -10,7 +10,7 @@ const loading = ref(false)
 const articles = ref<Article[] | undefined>()
 
 watch(
-  () => route,
+  () => route.fullPath,
   async () => {
     {
       loading.value = true

@@ -8,7 +8,7 @@ const logOut = () => {
   UserService.deAuthorize()
 
   setTimeout(() => {
-    router.push("/")
+    router.replace("/")
   }, 0)
 }
 </script>
@@ -16,8 +16,10 @@ const logOut = () => {
 <template>
   <header>
     <nav class="nav">
+      <RouterLink to="/">Root</RouterLink>
       <RouterLink to="/articles">Articles</RouterLink>
       <RouterLink to="/login">Login</RouterLink>
+
       <a href="#" @click="logOut">Logout</a>
     </nav>
   </header>
