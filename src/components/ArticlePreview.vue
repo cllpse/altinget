@@ -21,7 +21,7 @@ const onClick = (id: number | undefined) => {
       </RouterLink>
     </h2>
 
-    <img class="img" src="https://placehold.co/40" :alt="data.headline || ''" />
+    <img src="https://placehold.co/40" :alt="data.headline || ''" />
   </article>
 </template>
 
@@ -34,11 +34,15 @@ const onClick = (id: number | undefined) => {
   cursor: pointer;
 }
 
+.article:hover a {
+  text-decoration: none;
+}
+
 .article:not(:last-child) {
   margin-bottom: calc(var(--bu) * 4);
 }
 
-.img {
+.article img {
   border-radius: var(--bu);
 }
 </style>
