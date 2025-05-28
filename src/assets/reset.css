@@ -22,10 +22,6 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 /* 6. Improve media defaults */
@@ -70,10 +66,26 @@ h6 {
   text-wrap: balance;
 }
 
-/*
-  10. Create a root stacking context
-*/
-#root,
-#__next {
-  isolation: isolate;
+p,
+legend,
+label,
+button {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  padding: calc(var(--bu) * 4);
 }

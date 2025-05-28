@@ -1,5 +1,5 @@
 <template>
-  <h1>Article</h1>
+  <section>
+    <h1>Article</h1>
+  </section>
 </template>
-
-<style scoped></style>

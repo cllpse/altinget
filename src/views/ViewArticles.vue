@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { getArticles, type Article } from "@/api/api"
+import { getAll, type Article } from "@/api/Articles"
 import ArticlePreview from "@/components/ArticlePreview.vue"
 import { ref, watch } from "vue"
 import { useRoute } from "vue-router"
@@ -16,7 +16,7 @@ watch(
       loading.value = true
 
       try {
-        articles.value = await getArticles()
+        articles.value = await getAll()
       } catch (e) {
         console.error(e)
       } finally {
@@ -29,13 +29,19 @@ watch(
 </script>
 
 <template>
-  <h1>Articles</h1>
+  <section>
+    <h1 class="h1">Articles</h1>
 
-  <template v-for="article in articles" :key="article.id">
-    <ArticlePreview :data="article" />
+    <p v-if="loading">Loading...</p>
 
-    <br />
-  </template>
+    <template v-else>
+      <ArticlePreview v-for="article in articles" :key="article.id" :data="article" />
+    </template>
+  </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.h1 {
+  margin-bottom: calc(var(--bu) * 4);
+}
+</style>

@@ -1,6 +1,6 @@
 import { type Middleware } from "openapi-fetch";
-import { login, type LoginToken } from "../api";
-import { LOCAL_STORAGE_TOKEN_KEY } from "../constants";
+import { LOCAL_STORAGE_TOKEN_KEY } from "@/constants";
+import { login, type LoginToken } from "../Users";
 
 let token: LoginToken = window.localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY) || undefined
 

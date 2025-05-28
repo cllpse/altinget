@@ -1,4 +1,5 @@
 import "@/assets/reset.css"
+import "@/assets/variables.css"
 
 import { createApp } from "vue"
 import { createRouter, createWebHistory } from "vue-router"
@@ -11,7 +12,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "articles",
+      name: "root",
       component: Articles,
     },
     {
@@ -20,7 +21,7 @@ const router = createRouter({
       component: Articles,
     },
     {
-      path: "/article",
+      path: "/article/:id",
       name: "article",
       component: () => import("@/views/ViewArticle.vue"),
     },

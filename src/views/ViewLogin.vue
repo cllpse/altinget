@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import { login } from "@/api/api"
-import { LOCAL_STORAGE_TOKEN_KEY } from "@/api/constants"
+import { UserService } from "@/services/UserService"
+import { login } from "@/api/Users"
 
 const username = ref("admin")
 const password = ref("SuperSecret")
@@ -14,7 +14,7 @@ const onClick = async () => {
     })
 
     if (token) {
-      window.localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, token)
+      UserService.authorize(token)
     }
   } catch (error) {
     console.log(error)
@@ -23,10 +23,27 @@ const onClick = async () => {
 </script>
 
 <template>
-  <h1>Login</h1>
+  <section>
+    <h1>Login</h1>
 
-  <input type="text" v-model="username" />
-  <input type="password" v-model="password" />
+    <fieldset>
+      <legend>Enter your credentials to log in</legend>
 
-  <button @click="onClick">login</button>
+      <label for="username">Username</label>
+      <br />
+      <input id="username" type="text" v-model="username" />
+
+      <br />
+      <br />
+
+      <label for="password">Password</label>
+      <br />
+      <input id="password" type="password" v-model="password" />
+
+      <br />
+      <br />
+
+      <button @click="onClick">login</button>
+    </fieldset>
+  </section>
 </template>
